@@ -1,0 +1,34 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.qrcode {
+  margin: 1rem;
+  display: block;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: calc(100vh - 6rem);
+}
+
+.btn {
+  padding: 1rem;
+  background-color: #ca8709;
+  border: none;
+  border-radius: .5rem;
+  color: #fff;
+}
