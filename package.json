@@ -8,7 +8,8 @@
     "start": "node server.js",
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "watch:sass": "node-sass client/src/styles.scss client/src/style.css -w"
   },
   "author": "Brad Traversy",
   "license": "MIT",
@@ -19,6 +20,7 @@
     "body-parser": "^1.19.0",
     "concurrently": "^3.5.1",
     "express": "^4.16.2",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "node-sass": "^5.0.0"
   }
 }

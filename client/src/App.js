@@ -1,19 +1,24 @@
 import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import About from "./components/About";
+import Home from "./components/Home";
+import Navbar from "./components/Navbar";
+import Products from "./components/Products";
+import "./style.css";
+// import "./css/popup.css";
 
 
 function App() {
-  return (
-    <h1>Hello world!</h1>
-    // <Router>
-    //   <Nav />
-    //   <Switch>
-    //     <Route path="/" exact component={Home} />
-    //     <Route path="/customer" component={Customers} />
-    //     <Route path="/about" component={About} />
-    //     <Route path="/files/:fileID" component={Tervek} />
-    //   </Switch>
+  return (    
+    <Router>
+      <Navbar />
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/products" component={Products} />
+        <Route path="/about" component={About} />        
+      </Switch>
 
-    // </Router>
+    </Router>
   );
 }
 
