@@ -1,0 +1,45 @@
+.home {
+    &--container {
+        background-color: #62760c;
+        clip-path: polygon(0 0, 70vw 0, 55vw 100%, 0 100%);
+        height: calc(100vh - var(--navbar_height));
+        width: 100vw;
+        color: var(--yellow);
+        padding-left: 8rem;
+        padding-top: 12rem;
+    }
+
+    &--h1 {
+        width: 70rem;
+    }
+
+    &--h2 {
+        width: 88rem;
+        margin-bottom: 10rem;
+    }
+
+    &--phone {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        transform-origin: right;;
+        // transform: translateX(0) rotate(0);
+        animation: slideIn 2s ease-out;
+        // &-container {
+        //     position: absolute;
+        //     bottom: 0;
+        //     right: 0;
+        // }
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(30rem) translateX(20rem) rotate(-70deg);        
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0) translateX(0) rotate(0);
+        opacity: 1;
+    }
+}

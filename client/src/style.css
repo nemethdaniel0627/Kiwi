@@ -1,3 +1,34 @@
+.home--container {
+  background-color: #62760c;
+  clip-path: polygon(0 0, 70vw 0, 55vw 100%, 0 100%);
+  height: calc(100vh - var(--navbar_height));
+  width: 100vw;
+  color: var(--yellow);
+  padding-left: 8rem;
+  padding-top: 12rem; }
+
+.home--h1 {
+  width: 70rem; }
+
+.home--h2 {
+  width: 88rem;
+  margin-bottom: 10rem; }
+
+.home--phone {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform-origin: right;
+  animation: slideIn 2s ease-out; }
+
+@keyframes slideIn {
+  from {
+    transform: translateY(30rem) translateX(20rem) rotate(-70deg);
+    opacity: 0; }
+  to {
+    transform: translateY(0) translateX(0) rotate(0);
+    opacity: 1; } }
+
 .input-container {
   font-size: 1.4rem;
   display: inline-block;
@@ -106,6 +137,13 @@ input[type="number"] {
   100% {
     transform: translate(2.4rem, 0); } }
 
+:root {
+  --navbar_height: 6rem;
+  --yellow: #cdb30c;
+  --yellow-green: #62760c;
+  --brown-green: #535204;
+  --brown: #523906; }
+
 * {
   padding: 0;
   margin: 0;
@@ -115,7 +153,24 @@ html {
   font-size: 62.5%; }
 
 body {
-  font-family: sans-serif; }
+  font-family: 'Play', sans-serif;
+  background-color: var(--brown-green);
+  overflow-y: hidden;
+  /* Hide vertical scrollbar */
+  overflow-x: hidden;
+  /* Hide horizontal scrollbar */ }
+
+h1 {
+  font-size: 13rem; }
+
+.small-h1 {
+  font-size: 8.5rem; }
+
+h2 {
+  font-size: 8.5rem; }
+
+.Amatic {
+  font-family: "Amatic SC", cursive; }
 
 .qrcode {
   margin: 1rem;
@@ -146,12 +201,11 @@ body {
   width: 100vw;
   padding: 2rem;
   font-size: 4.5rem;
-  height: 6rem; }
+  height: var(--navbar_height);
+  padding-right: 3rem; }
   .nav--logo {
-    background-image: url("./img//kiwi_logo.png");
-    background-repeat: no-repeat;
-    width: 5rem;
-    height: 5rem; }
+    display: flex;
+    align-items: center; }
   .nav--link {
     list-style: none;
     display: flex;
@@ -162,11 +216,17 @@ body {
   .nav--item {
     text-decoration: none;
     color: inherit; }
+    @media only screen and (max-width: 600px) {
+      .nav--item {
+        display: none; } }
   .nav--icon {
     background-color: #000;
     height: 0.3rem;
     width: 3.5rem;
     transition: all .2s; }
+    @media only screen and (min-width: 601px) {
+      .nav--icon {
+        display: none; } }
     .nav--icon--label {
       padding: 2rem 0;
       margin-right: .5rem; }
@@ -174,6 +234,9 @@ body {
         transform: translateY(-1.4rem); }
       .nav--icon--label:hover .nav--icon::after {
         transform: translateY(1.3rem); }
+      @media only screen and (min-width: 601px) {
+        .nav--icon--label {
+          display: none; } }
     .nav--icon::after, .nav--icon::before {
       content: "";
       display: block;

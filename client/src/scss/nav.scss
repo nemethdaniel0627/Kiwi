@@ -8,13 +8,16 @@
     width: 100vw;
     padding: 2rem;
     font-size: 4.5rem;
-    height: 6rem;
+    height: var(--navbar_height);
+    padding-right: 3rem;
 
     &--logo {
-        background-image: url("./img//kiwi_logo.png");
-        background-repeat: no-repeat;
-        width: 5rem;
-        height: 5rem;
+        // background-image: url("./img//kiwi_logo.png");
+        // background-repeat: no-repeat;
+        // width: 5rem;
+        // height: 5rem;
+        display: flex;
+        align-items: center;
     }
 
     &--link {
@@ -29,6 +32,9 @@
     &--item {
         text-decoration: none;
         color: inherit;
+        @media only screen and (max-width: 600px) {
+            display: none;
+        }
     }
 
     &--icon {
@@ -36,6 +42,10 @@
         height: 0.3rem;
         width: 3.5rem;        
         transition: all .2s;
+
+        @media only screen and (min-width: 601px) {
+            display: none;
+        }
 
         &--label {
             padding: 2rem 0;
@@ -45,6 +55,10 @@
             }
             &:hover .nav--icon::after {
                 transform: translateY(1.3rem);
+            }
+
+            @media only screen and (min-width: 601px) {
+                display: none;
             }
         }
 
@@ -97,11 +111,3 @@
         top: 0;
     }
 }
-
-// #nav--icon--btn:checked + .nav--icon--label .nav--icon::before{
-//     background-color: black;
-// }
-
-// #nav--icon--btn:checked + .nav--icon--label .nav--icon::after{
-//     background-color: black;
-// }

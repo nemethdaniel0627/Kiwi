@@ -1,3 +1,13 @@
+
+:root {
+  --navbar_height: 6rem;
+  --yellow: #cdb30c;
+  --yellow-green: #62760c;
+  --brown-green: #535204;
+  --brown: #523906;
+}
+// variables
+
 * {
   padding: 0;
   margin: 0;
@@ -8,7 +18,25 @@ html {
 }
 
 body {
-  font-family: sans-serif;
+  font-family: 'Play', sans-serif;
+  background-color: var(--brown-green);
+  overflow-y: hidden; /* Hide vertical scrollbar */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+h1{
+  font-size: 13rem;
+}
+.small-h1 {
+  font-size: 8.5rem;
+}
+
+h2 {
+  font-size: 8.5rem;
+}
+
+.Amatic {
+  font-family: "Amatic SC", cursive;;
 }
 
 .qrcode {
