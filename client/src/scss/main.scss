@@ -2,6 +2,7 @@
 :root {
   --navbar_height: 6rem;
   --yellow: #cdb30c;
+  --light-yellow: rgba(205, 179, 12, .6);
   --yellow-green: #62760c;
   --brown-green: #535204;
   --brown: #523906;
@@ -15,13 +16,15 @@
 }
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: 'Play', sans-serif;
   background-color: var(--brown-green);
-  overflow-y: hidden; /* Hide vertical scrollbar */
-  overflow-x: hidden; /* Hide horizontal scrollbar */
+  // overflow-y: hidden; 
+  overflow-x: hidden;
+  
 }
 
 h1{

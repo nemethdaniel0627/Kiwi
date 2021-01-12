@@ -9,13 +9,13 @@ import "./style.css";
 
 
 function App() {
-  return (    
+  return (
     <Router>
       <Navbar />
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/products" component={Products} />
-        <Route path="/about" component={About} />        
+        <Route path="/about" component={About} />
       </Switch>
 
     </Router>

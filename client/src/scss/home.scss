@@ -1,3 +1,61 @@
+#two,
+#three {
+    height: 100vh;
+    width: 100vw;
+}
+
+.fp-tableCell {
+    display: initial;
+    height: calc(100vh - var(--navbar_height)) !important;
+}
+
+.section {
+    &--first,
+    &--third {
+        height: calc(100vh - var(--navbar_height)) !important;
+    }
+
+    &--second {
+        background-color: var(--brown);
+    }
+
+    &--third {
+    }
+}
+
+.specs {
+    &--container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        padding: 6rem 2rem;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    &--finger {        
+        width: 3rem;        
+
+        &-block {
+            display: flex;
+            border-radius: 10px;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            bottom: 7rem;
+            left: 47%;
+            background-color: var(--light-yellow);
+            width: 3.2rem;
+            height: 3.2rem;
+            z-index: 10;
+        }
+    }
+
+    &--phone {
+        position: relative;
+    }
+}
+
 .home {
     &--container {
         background-color: #62760c;
@@ -22,8 +80,7 @@
         position: absolute;
         bottom: 0;
         right: 0;
-        transform-origin: right;;
-        // transform: translateX(0) rotate(0);
+        transform-origin: right;
         animation: slideIn 2s ease-out;
         // &-container {
         //     position: absolute;
@@ -35,7 +92,7 @@
 
 @keyframes slideIn {
     from {
-        transform: translateY(30rem) translateX(20rem) rotate(-70deg);        
+        transform: translateY(30rem) translateX(20rem) rotate(-70deg);
         opacity: 0;
     }
     to {

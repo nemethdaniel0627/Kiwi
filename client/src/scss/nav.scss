@@ -10,6 +10,8 @@
     font-size: 4.5rem;
     height: var(--navbar_height);
     padding-right: 3rem;
+    position: relative;
+    z-index: 1000;
 
     &--logo {
         // background-image: url("./img//kiwi_logo.png");
