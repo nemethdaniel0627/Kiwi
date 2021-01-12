@@ -28,7 +28,7 @@
         width: 100%;
         height: 100%;
         display: flex;
-        padding: 6rem 2rem;
+        padding: 15rem 2rem;
         justify-content: center;
         align-items: flex-start;
     }
@@ -53,6 +53,42 @@
 
     &--phone {
         position: relative;
+    }
+
+    &--line {
+        background-color: var(--yellow);
+        height: .4rem;
+        
+        &--finger {
+            width: 30rem;
+            position: absolute;
+            bottom: 8.5rem;
+            right: 53%;
+
+        }
+    }
+
+    &--block {
+        background-color: var(--yellow);
+        position: relative;
+
+        &--font {
+            font-size: 3rem;            
+            text-align: center;
+
+            &--bold {
+                font-weight: bold;
+            }
+        }
+
+        &--finger {
+            width: 30rem;
+            height: 15rem;
+            right: 100%;
+            bottom: 1500%;
+            display: flex;            
+            align-items: center;
+        }
     }
 }
 
