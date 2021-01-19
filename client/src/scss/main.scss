@@ -38,13 +38,16 @@ h2 {
   font-size: 8.5rem;
 }
 
-.Amatic {
-  font-family: "Amatic SC", cursive;;
+.allcaps {
+  text-transform: uppercase;
 }
 
-.qrcode {
-  margin: 1rem;
-  display: block;
+.underline {
+  text-decoration: underline;
+}
+
+.Amatic {
+  font-family: "Amatic SC", cursive;;
 }
 
 .home-container {
@@ -56,10 +59,6 @@ h2 {
   height: calc(100vh - 6rem);
 }
 
-.btn {
-  padding: 1rem;
-  background-color: #ca8709;
-  border: none;
-  border-radius: .5rem;
-  color: #fff;
+.section {
+  position: relative;
 }

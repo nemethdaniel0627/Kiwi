@@ -25,9 +25,8 @@ export default function Home() {
         <ReactFullpage
             //fullpage options
             licenseKey={'YOUR_KEY_HERE'}
-            scrollingSpeed={1000} /* Options here */
-
-            onLeave={function onLeave(origin, destination, direction) {
+            scrollingSpeed={1000}
+            onLeave={function onLeave(origin, destination, direction) {                
                 if (destination.item.className.includes("section--second")) {
                     var inVisibles = document.getElementsByClassName("invisible");
                     var visible = 1;
@@ -46,11 +45,18 @@ export default function Home() {
                         visible++
                     }
                 }
+                if(destination.item.className.includes("section--third") && origin.item.className.includes("section--second")) {
+                    var phone = document.getElementById("movingPhone");
+                    phone.classList = "phoneDown";
+                }
+                if(destination.item.className.includes("section--second") && origin.item.className.includes("section--third")) {
+                    var phone = document.getElementById("movingPhone");
+                    phone.classList = "phoneUp";
+                }
             }}
 
             render={({ state, fullpageApi }) => {
                 return (
-
                     <ReactFullpage.Wrapper>
                         <div className="section section--first">
                             <div className="home--container">
@@ -68,7 +74,7 @@ export default function Home() {
                             {/* <div id="two"></div> */}
                             <div className="specs--container">
                                 <div className="specs--phone">
-                                    <img src="img/justphone.png" alt="Phone" />
+                                    <img id="movingPhone" src="img/justphone.png" alt="Phone" />
                                     <div className="invisible">{/*  finger */}
                                         <div className="specs--point specs--finger--point">
                                             <svg className="specs--finger" width="30" height="29" viewBox="0 0 28 27" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -131,11 +137,24 @@ export default function Home() {
                                     </div>
                                     <div className="invisible">{/*port*/}
                                         <div className="specs--arrow">
-                                            <svg className="specs--arrow--head" width="63" height="65" viewBox="0 0 63 65" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M13.0607 0.939339C12.4749 0.353554 11.5251 0.353554 10.9393 0.939339L1.3934 10.4853C0.807614 11.0711 0.807614 12.0208 1.3934 12.6066C1.97919 13.1924 2.92893 13.1924 3.51472 12.6066L12 4.12132L20.4853 12.6066C21.0711 13.1924 22.0208 13.1924 22.6066 12.6066C23.1924 12.0208 23.1924 11.0711 22.6066 10.4853L13.0607 0.939339ZM13.5 65L13.5 2L10.5 2L10.5 65L13.5 65Z" fill="#CDB30C" />
+                                            <svg className="specs--arrow--head" width="30" height="65" viewBox="0 0 30 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g filter="url(#filter0_d)">
+                                                    <path className="specs--arrow--head--line" d="M13.0607 0.939339C12.4749 0.353554 11.5251 0.353554 10.9393 0.939339L1.3934 10.4853C0.807614 11.0711 0.807614 12.0208 1.3934 12.6066C1.97919 13.1924 2.92893 13.1924 3.51472 12.6066L12 4.12132L20.4853 12.6066C21.0711 13.1924 22.0208 13.1924 22.6066 12.6066C23.1924 12.0208 23.1924 11.0711 22.6066 10.4853L13.0607 0.939339ZM13.5 65L13.5 2L10.5 2L10.5 65L13.5 65Z" fill="#CDB30C" />
+                                                </g>
+                                                <defs>
+                                                    <filter id="filter0_d" x="0.95406" y="0.5" width="32.0919" height="75.5" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                                                        <feFlood floodOpacity="0" result="BackgroundImageFix" />
+                                                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                                                        <feOffset dy="6" />
+                                                        <feGaussianBlur stdDeviation="2.5" />
+                                                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.37 0" />
+                                                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
+                                                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
+                                                    </filter>
+                                                </defs>
                                             </svg>
-                                            <svg  className="specs--arrow--line">
-                                                <line x1="0" y1="5" x2="51" y2="5" stroke="#CDB30C" strokeWidth="3" />
+                                            <svg className="specs--arrow--line">
+                                                <line x1="0" y1="7" x2="51" y2="7" stroke="#CDB30C" strokeWidth="3" />                                                
                                             </svg>
                                         </div>
                                         <div className="specs--block specs--block--left specs--block--charge-1">
@@ -155,8 +174,12 @@ export default function Home() {
                             </div>
                         </div>
                         <div className="section section--third">
-                            <div id="three"></div>
+                            {/* <img className="footer--img" src="img/justphone.png" alt="Phone" /> */}
+                            
                         </div>
+                        <span className="footer--text">
+                                Buy our new <span className="Amatic allcaps">product</span> <span className="allcaps underline">today!</span>
+                        </span>
                     </ReactFullpage.Wrapper>
                 );
             }}
