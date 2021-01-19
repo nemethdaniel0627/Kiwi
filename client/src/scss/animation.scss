@@ -13,18 +13,22 @@
 @keyframes movePhoneDown {
     from {
         transform: translate(0,0);
+        width: 100%;
     }
     to {
         transform: translate(-45rem, 108.5rem);
+        width: 110%;
     }
 }
 
 @keyframes movePhoneUp {
     from {
         transform: translate(-45rem, 108.5rem);
+        width: 110%;
     }
     to {
         transform: translate(0,0);
+        width: 100%;
     }
 }
 

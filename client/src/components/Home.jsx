@@ -1,32 +1,15 @@
 import React from 'react';
 import ReactFullpage from '@fullpage/react-fullpage';
+import Footer from './Footer';
 
 export default function Home() {
-
-    var secondSec = document.getElementById("secondSec");
-    window.onscroll = function () {
-        console.log("scroll");
-
-    };
-
-
-    // secondSec.onload = () => {
-    //     console.log(secondSec.classList);
-    //     // if (secondSec.classList.contains == "active") {
-    //     //     console.log("sikerült");
-    //     // }        
-    // };
-
-    function onLeave(origin, destination, direction) {
-
-    }
 
     return (
         <ReactFullpage
             //fullpage options
             licenseKey={'YOUR_KEY_HERE'}
             scrollingSpeed={1000}
-            onLeave={function onLeave(origin, destination, direction) {                
+            onLeave={function onLeave(origin, destination, direction) {
                 if (destination.item.className.includes("section--second")) {
                     var inVisibles = document.getElementsByClassName("invisible");
                     var visible = 1;
@@ -45,11 +28,11 @@ export default function Home() {
                         visible++
                     }
                 }
-                if(destination.item.className.includes("section--third") && origin.item.className.includes("section--second")) {
+                if (destination.item.className.includes("section--third") && origin.item.className.includes("section--second")) {
                     var phone = document.getElementById("movingPhone");
                     phone.classList = "phoneDown";
                 }
-                if(destination.item.className.includes("section--second") && origin.item.className.includes("section--third")) {
+                if (destination.item.className.includes("section--second") && origin.item.className.includes("section--third")) {
                     var phone = document.getElementById("movingPhone");
                     phone.classList = "phoneUp";
                 }
@@ -154,7 +137,7 @@ export default function Home() {
                                                 </defs>
                                             </svg>
                                             <svg className="specs--arrow--line">
-                                                <line x1="0" y1="7" x2="51" y2="7" stroke="#CDB30C" strokeWidth="3" />                                                
+                                                <line x1="0" y1="7" x2="51" y2="7" stroke="#CDB30C" strokeWidth="3" />
                                             </svg>
                                         </div>
                                         <div className="specs--block specs--block--left specs--block--charge-1">
@@ -173,12 +156,11 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
-                        <div className="section section--third">
-                            {/* <img className="footer--img" src="img/justphone.png" alt="Phone" /> */}
-                            
+                        <div className="active section section--third">                            
+                            <Footer/>
                         </div>
                         <span className="footer--text">
-                                Buy our new <span className="Amatic allcaps">product</span> <span className="allcaps underline">today!</span>
+                            Buy our new <span className="Amatic allcaps">product</span> <span className="allcaps underline">today!</span>
                         </span>
                     </ReactFullpage.Wrapper>
                 );
