@@ -1,41 +1,25 @@
 import React from 'react';
 import ReactFullpage from '@fullpage/react-fullpage';
-import Navbar from "./Navbar";
 
 export default function Home() {
 
-    var dir = 0;
-    var secOne = document.getElementById("one");
-    var secTwo = document.getElementById("two");
-    var secThree = document.getElementById("three");
-    // window.onscroll = () => {
-    //     // console.log(e);
-    //     // if (window.scrollY > 10) {
-    //     //     console.log(win);
-    //     // }
+    var secondSec = document.getElementById("secondSec");
+    window.onscroll = function () {
+        console.log("scroll");
 
-    //     // le();
-    //     // console.log("le");
+    };
 
-    //     if (dir < window.scrollY) {
-    //         dir = window.scrollY;
-    //         // window.scrollTo({duration: 1000}, document.getElementById("two").offsetTop, 0);
-    //         // console.log(secTwo.offsetTop);
-    //         // document.getElementById("two").scrollIntoView({behavior: 'smooth'});
-    //         window.scroll(0, document.getElementById("two").offsetTop);
-    //     } else if (dir > window.scrollY) {
-    //         dir = window.scrollY;
-    //         console.log("fel");
-    //     }
-    // }
 
-    // window.addEventListener("scroll", () => {
-    //     document.getElementById("two").scrollIntoView({ behavior: 'smooth' });
-    // })
+    // secondSec.onload = () => {
+    //     console.log(secondSec.classList);
+    //     // if (secondSec.classList.contains == "active") {
+    //     //     console.log("sikerült");
+    //     // }        
+    // };
 
-    // function le() {
-    //     document.getElementById("two").scrollIntoView({ behavior: 'smooth' });
-    // }
+    function onLeave(origin, destination, direction) {
+
+    }
 
     return (
         <ReactFullpage
@@ -43,10 +27,31 @@ export default function Home() {
             licenseKey={'YOUR_KEY_HERE'}
             scrollingSpeed={1000} /* Options here */
 
+            onLeave={function onLeave(origin, destination, direction) {
+                if (destination.item.className.includes("section--second")) {
+                    var inVisibles = document.getElementsByClassName("invisible");
+                    var visible = 1;
+                    for (let i = 0; i < inVisibles.length; i++) {
+                        inVisibles[i].classList.value = "visible visible--" + visible;
+                        visible++
+                    }
+                    inVisibles = document.getElementsByClassName("invisible");
+                    for (let i = 0; i < inVisibles.length; i++) {
+                        inVisibles[i].classList.value = "visible visible--" + visible;
+                        visible++
+                    }
+                    inVisibles = document.getElementsByClassName("invisible");
+                    for (let i = 0; i < inVisibles.length; i++) {
+                        inVisibles[i].classList.value = "visible visible--" + visible;
+                        visible++
+                    }
+                }
+            }}
+
             render={({ state, fullpageApi }) => {
                 return (
-                    <ReactFullpage.Wrapper>
 
+                    <ReactFullpage.Wrapper>
                         <div className="section section--first">
                             <div className="home--container">
                                 <h2 className="home--h2">
@@ -59,13 +64,13 @@ export default function Home() {
                             </div>
                             <img id="kep" className="home--phone" src="img/phone_hand.png" alt="Phone" />
                         </div>
-                        <div className="section section--second">
+                        <div className="section section--second" id="secondSec">
                             {/* <div id="two"></div> */}
                             <div className="specs--container">
                                 <div className="specs--phone">
                                     <img src="img/justphone.png" alt="Phone" />
-                                    <div>
-                                        <div className="specs--finger-block">
+                                    <div className="invisible">{/*  finger */}
+                                        <div className="specs--point specs--finger--point">
                                             <svg className="specs--finger" width="30" height="29" viewBox="0 0 28 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M10.8819 14.8242C10.849 14.5774 10.6203 14.4036 10.3753 14.4387C10.1289 14.4716 9.95649 14.6986 9.98979 14.9453C10.4658 18.4569 9.19858 22.0046 6.60067 24.4349C6.41918 24.6047 6.40974 24.8898 6.57993 25.0717C6.66821 25.1662 6.78795 25.2139 6.90864 25.2139C7.01899 25.2139 7.12928 25.1739 7.2162 25.0924C10.0267 22.463 11.3971 18.6245 10.8819 14.8242Z" fill="white" />
                                                 <path d="M4.35634 15.3502C4.35185 15.329 4.34599 15.3087 4.33876 15.2885C4.24779 14.821 4.19243 14.346 4.17259 13.8749C4.16266 13.6264 3.95015 13.435 3.70423 13.4435C3.45568 13.4534 3.26248 13.6633 3.27282 13.9119C3.29536 14.4514 3.36111 14.9953 3.46824 15.5294C3.4723 15.5502 3.47816 15.5704 3.48534 15.5902C3.77896 17.1614 3.20702 18.7735 1.98308 19.8102C1.79347 19.9714 1.76961 20.2555 1.93041 20.4451C2.02002 20.5505 2.14656 20.6046 2.27443 20.6046C2.37755 20.6046 2.48066 20.5694 2.56536 20.4974C4.05548 19.2351 4.74178 17.2627 4.35634 15.3502Z" fill="white" />
@@ -82,10 +87,66 @@ export default function Home() {
                                                 <path d="M17.0026 17.9981C16.7572 17.9702 16.5321 18.1472 16.5042 18.3944C16.1826 21.2103 15.1622 23.9428 13.5523 26.2957C13.4118 26.5006 13.4641 26.7807 13.6694 26.9212C13.7473 26.9748 13.8356 27 13.9234 27C14.0671 27 14.2085 26.9316 14.2954 26.8041C15.9882 24.3305 17.0613 21.4579 17.399 18.4966C17.4269 18.2494 17.2494 18.0261 17.0026 17.9981Z" fill="white" />
                                             </svg>
                                         </div>
-                                        <div className="specs--line specs--line--horizontal specs--line--finger">
-                                            <div className="specs--block specs--block--finger">
+                                        <div className="specs--line specs--line--finger">
+                                            <div className="specs--block specs--block--right">
                                                 <span className="specs--block--font">
                                                     Super fast <i className="specs--block--font--bold">underdisplay</i> fingerprint sensor
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="invisible">{/*selfie*/}
+                                        <div className="specs--point specs--selfie--point"></div>
+                                        <div className="specs--line specs--line--selfie">
+                                            <div className="specs--block specs--block--right">
+                                                <span className="specs--block--font specs--block--selfie">
+                                                    164MP <span>selfie camera</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="invisible">{/*display*/}
+                                        <div className="specs--point specs--display--point"></div>
+                                        <div className="specs--line specs--line--display">
+                                            <div className="specs--block specs--block--left">
+                                                <span className="specs--block--font specs--block--display">
+                                                    4K resolution for every day
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="invisible">{/*display-size*/}
+                                        <svg className="specs--two-arrow" width="566" height="24" viewBox="0 0 566 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M565.061 13.0607C565.646 12.4749 565.646 11.5252 565.061 10.9394L555.515 1.39345C554.929 0.80766 553.979 0.80766 553.393 1.39345C552.808 1.97923 552.808 2.92898 553.393 3.51477L561.879 12L553.393 20.4853C552.808 21.0711 552.808 22.0209 553.393 22.6066C553.979 23.1924 554.929 23.1924 555.515 22.6067L565.061 13.0607ZM2 13.5L564 13.5L564 10.5L2 10.5L2 13.5Z" fill="#CDB30C" />
+                                            <path d="M0.93934 10.9393C0.353553 11.5251 0.353553 12.4749 0.93934 13.0607L10.4853 22.6066C11.0711 23.1924 12.0208 23.1924 12.6066 22.6066C13.1924 22.0208 13.1924 21.0711 12.6066 20.4853L4.12132 12L12.6066 3.51472C13.1924 2.92893 13.1924 1.97918 12.6066 1.3934C12.0208 0.807612 11.0711 0.807612 10.4853 1.3934L0.93934 10.9393ZM76 10.5L2 10.5V13.5L76 13.5V10.5Z" fill="#CDB30C" />
+                                        </svg>
+                                        <div className="specs--point specs--display-size--point"></div>
+                                        <div className="specs--line specs--line--display-size">
+                                            <div className="specs--block specs--block--left">
+                                                <span className="specs--block--font specs--block--display-size">
+                                                    6.5" AMOLED display
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="invisible">{/*port*/}
+                                        <div className="specs--arrow">
+                                            <svg className="specs--arrow--head" width="63" height="65" viewBox="0 0 63 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M13.0607 0.939339C12.4749 0.353554 11.5251 0.353554 10.9393 0.939339L1.3934 10.4853C0.807614 11.0711 0.807614 12.0208 1.3934 12.6066C1.97919 13.1924 2.92893 13.1924 3.51472 12.6066L12 4.12132L20.4853 12.6066C21.0711 13.1924 22.0208 13.1924 22.6066 12.6066C23.1924 12.0208 23.1924 11.0711 22.6066 10.4853L13.0607 0.939339ZM13.5 65L13.5 2L10.5 2L10.5 65L13.5 65Z" fill="#CDB30C" />
+                                            </svg>
+                                            <svg  className="specs--arrow--line">
+                                                <line x1="0" y1="5" x2="51" y2="5" stroke="#CDB30C" strokeWidth="3" />
+                                            </svg>
+                                        </div>
+                                        <div className="specs--block specs--block--left specs--block--charge-1">
+                                            <span className="specs--block--font">
+                                                USB Type-C 3.0 connector
+                                            </span>
+                                        </div>
+                                        <div className="specs--line specs--line--charge-2">
+                                            <div className="specs--block specs--block--left">
+                                                <span className="specs--block--font specs--block--charge-2">
+                                                    120W fast charge
                                                 </span>
                                             </div>
                                         </div>
