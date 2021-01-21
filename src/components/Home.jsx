@@ -41,7 +41,7 @@ export default function Home() {
     return (
         <ReactFullpage
             //fullpage options
-            licenseKey={'YOUR_KEY_HERE'}
+            licenseKey={'E7A5A962-1C7B4D5E-83D75823-E19BE58F'}
             scrollingSpeed={1000}
             onLeave={function onLeave(origin, destination, direction) {
                 if (destination.item.className.includes("section--second")) {
