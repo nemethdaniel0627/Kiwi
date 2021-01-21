@@ -1,0 +1,115 @@
+.footer {
+    &--img {
+        position: absolute;
+        top: 40%;
+        left: 20%;
+        transform: translate(-50%, -50%);
+    }
+
+    &--text {
+        font-size: 10rem;
+        color: var(--yellow);
+        position: absolute;
+        // z-index: 10;
+        bottom: 20%;
+        left: 40%;
+        width: 60%;
+        text-align: center;
+    }
+
+    &--header {
+        font-size: 5rem;
+        margin-bottom: 4rem;
+        font-weight: 100;
+    }
+
+    &--shape {
+        align-self: stretch;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        
+        &--line {
+            background-color: var(--yellow);
+            width: 45vw;
+            height: .7rem;            
+        }
+
+        &--circle {
+            background-color: var(--yellow);
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+        }
+    }
+
+    &--social {
+        align-self: stretch;
+        font-size: 4rem;
+        padding: 0 30rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-decoration: none;
+        
+        &--logos {
+
+        }
+
+        &--links:link,
+        &--links:visited {
+            font-variant: small-caps;
+            text-decoration: none;
+            color: var(--yellow);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: all .3s ease-out;
+            font-size: 5rem;
+        }
+
+        &--links:focus,
+        &--links:hover {
+            transform: skew(10deg) scale(1.3);
+        }
+
+        &--twitter:link,
+        &--twitter:visited {                    
+            
+        }
+        &--insta:link,
+        &--insta:visited {                    
+            
+        }
+        &--email {            
+            text-transform: uppercase;            
+            font-size: 4.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: all .3s ease-out;
+        }
+        &--phone {
+            font-variant: small-caps;
+            text-decoration: none;
+            color: var(--yellow);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: all .3s ease-out;
+            font-size: 5rem;
+        }
+    }
+}
+
+footer {
+    color: var(--yellow);
+    width: 100vw;
+    position: absolute;
+    bottom: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+
+}

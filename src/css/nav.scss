@@ -1,0 +1,115 @@
+.nav {
+    background-color: #cdb30c;
+    color: #000;
+    display: flex;
+    font-family: "Amatic SC", cursive;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    padding: 2rem;
+    font-size: 4.5rem;
+    height: var(--navbar_height);
+    padding-right: 3rem;
+    position: relative;
+    z-index: 10;
+
+    &--logo {
+        // background-image: url("./img//kiwi_logo.png");
+        // background-repeat: no-repeat;
+        // width: 5rem;
+        // height: 5rem;
+        display: flex;
+        align-items: center;
+    }
+
+    &--link {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        min-width: 10vw;
+        gap: 3rem;
+    }
+
+    &--item {
+        text-decoration: none;
+        color: inherit;
+        @media only screen and (max-width: 600px) {
+            display: none;
+        }
+    }
+
+    &--icon {
+        background-color: #000;
+        height: 0.3rem;
+        width: 3.5rem;        
+        transition: all .2s;
+
+        @media only screen and (min-width: 601px) {
+            display: none;
+        }
+
+        &--label {
+            padding: 2rem 0;
+            margin-right: .5rem;
+            &:hover .nav--icon::before {
+                transform: translateY(-1.4rem);
+            }
+            &:hover .nav--icon::after {
+                transform: translateY(1.3rem);
+            }
+
+            @media only screen and (min-width: 601px) {
+                display: none;
+            }
+        }
+
+        &::after,
+        &::before {
+            content: "";
+            display: block;
+            background-color: black;
+            height: 0.3rem;
+            width: 3.5rem;
+            transition: all .3s;         
+        }
+
+        &::before {
+            transform: translateY(-1.2rem);
+        }
+
+        &::after {
+            transform: translateY(1.1rem);
+        }
+    }
+}
+
+.nav--checkbox{
+    display: none;
+
+    &:checked ~ .nav--icon--label {
+        z-index: 10;
+        // top: 0;
+        // right: 0;
+        // width: 20%;
+        // height: 100vh;
+        // border-radius: 0;
+        transform: scaleX(1);
+        font-size: 1rem;
+        visibility: visible;
+    }
+
+    &:checked ~ .nav--icon--label .nav--icon{
+        background-color: transparent;
+    }
+
+    &:checked ~ .nav--icon--label .nav--icon::before {
+        top: 0;         
+        transform: translateY(.15rem) rotate(225deg);
+    }
+
+    &:checked ~ .nav--icon--label .nav--icon::after {
+        transform: translateY(-.15rem) rotate(135deg);
+        top: 0;
+    }
+}

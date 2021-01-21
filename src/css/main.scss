@@ -1,0 +1,64 @@
+
+:root {
+  --navbar_height: 6rem;
+  --yellow: #cdb30c;
+  --light-yellow: rgba(205, 179, 12, .6);
+  --yellow-green: #62760c;
+  --brown-green: #535204;
+  --brown: #523906;  
+}
+// variables
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Play', sans-serif;
+  background-color: var(--brown-green);
+  // overflow-y: hidden; 
+  overflow-x: hidden;
+  
+}
+
+h1{
+  font-size: 13rem;
+}
+.small-h1 {
+  font-size: 8.5rem;
+}
+
+h2 {
+  font-size: 8.5rem;
+}
+
+.allcaps {
+  text-transform: uppercase;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.Amatic {
+  font-family: "Amatic SC", cursive;;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: calc(100vh - 6rem);
+}
+
+.section {
+  position: relative;
+}

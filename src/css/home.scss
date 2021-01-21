@@ -1,0 +1,276 @@
+.fp-tableCell {
+    display: initial;
+    height: calc(100vh - var(--navbar_height)) !important;
+}
+
+.section {
+    &--first {
+        height: calc(100vh - var(--navbar_height)) !important;
+        background-color: var(--brown-green);
+    }
+
+    &--second {
+        background-color: var(--brown);
+        // height: calc(100vh - var(--navbar_height)) !important;
+    }
+
+    &--third {
+        // height: calc(100vh - var(--navbar_height)) !important;
+        // position: relative;
+        // z-index: 10;
+        background-color: var(--brown-green);
+        // clip-path: polygon(0 0, 100% 0, 100% 70%, 0 40%);
+        clip-path: polygon(0 40%, 100% 70%, 100% 100%, 0 100%);
+    }
+}
+
+#fullpage {
+    background-color: var(--yellow-green);
+}
+
+.invisible {
+    display: none;
+}
+
+.visible {
+    display: initial;
+}
+
+.specs {
+    &--container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        padding: 15rem 2rem;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    &--point {
+        display: flex;
+        border-radius: 10px;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        background-color: var(--light-yellow);
+        z-index: 10;
+        opacity: 0;
+        box-shadow: 0 .5rem 1.2rem rgba(0,0,0,.3);
+    }
+
+    &--finger {
+        width: 3rem;
+        opacity: 1;
+
+        &--point {
+            bottom: 7rem;
+            left: 47%;
+            width: 3.2rem;
+            height: 3.2rem;
+            animation: pointAppear 0.8s 0.5s forwards;
+        }
+    }
+
+    &--selfie--point {
+        top: 1.1rem;
+        left: 16%;
+        width: 1.4rem;
+        height: 1.4rem;
+        animation: pointAppear 0.8s 1s forwards;
+    }
+
+    &--display--point {
+        top: 10rem;
+        right: 16%;
+        width: 1.7rem;
+        height: 1.7rem;
+        animation: pointAppear 0.8s 1.5s forwards;
+    }
+
+    &--display-size--point {
+        top: 60%;
+        right: 33%;
+        width: 1.7rem;
+        height: 1.7rem;
+        animation: pointAppear 0.8s 2s forwards;
+    }
+
+    &--phone {
+        position: relative;
+    }
+
+    &--line {
+        background-color: var(--yellow);
+        height: 0.4rem;
+        width: 30rem;
+        position: absolute;
+        transform: scaleX(0);
+        box-shadow: 0 .3rem .7rem rgba(0,0,0,.5);
+
+        &--finger {
+            bottom: 8.5rem;
+            right: 53%;
+            transform-origin: right;
+            animation: lineAppear 1s 0.6s forwards;
+        }
+
+        &--selfie {
+            top: 1.6rem;
+            right: 83.6%;
+            transform-origin: right;
+            animation: lineAppear 1s 1.1s forwards;
+        }
+
+        &--display {
+            top: 10.7rem;
+            left: 83%;
+            transform-origin: left;
+            animation: lineAppear 1s 1.6s forwards;
+        }
+
+        &--display-size {
+            top: 61.25%;
+            left: 67%;
+            transform-origin: left;
+            animation: lineAppear 1s 2.1s forwards;
+        }
+
+        &--charge-2 {
+            bottom: -15.7%;
+            left: 170%;
+            width: 10rem;
+            transform-origin: left;
+            animation: lineAppear 1s 3.3s forwards;
+        }
+    }
+
+    &--block {
+        background-color: var(--yellow);
+        position: relative;
+        width: 30rem;
+        height: 15rem;
+        bottom: 1500%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 1rem 2rem rgba(0,0,0,.5);
+
+        &--font {
+            font-size: 3rem;
+            text-align: center;
+
+            &--bold {
+                font-weight: bold;
+            }
+        }
+
+        &--right {
+            right: 100%;
+        }
+
+        &--left {
+            left: 100%;
+        }
+
+        &--selfie {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &--display-size {
+            width: 70%;
+        }
+
+        &--charge-1 {
+            position: absolute;
+            bottom: -30%;
+            left: 69%;
+            transform-origin: left;
+            transform: scaleX(0);
+            animation: lineAppear 1s 2.3s ease-out forwards;
+        }
+    }
+
+    &--two-arrow {
+        transform-origin: center;
+        animation: scaleArr 1s 1s ease-out forwards;
+        position: absolute;
+        top: 46%;
+        left: -44%;
+        transform: scale(0) rotate(64deg);
+    }
+
+    &--arrow {
+        position: absolute;
+        left: 48%;
+        bottom: -10%;
+
+        &--head {
+            transform-origin: top;
+            animation: arrowGrowSecond 1s .3s ease-out forwards;
+            transform: scaleY(0);                    
+        }
+
+        &--line {
+            position: absolute;
+            bottom: 0;
+            left: 1.1rem;
+            height: 1rem;
+            width: 5.5rem;
+            animation: arrowGrowFirst 1s 1.3s ease-out forwards;
+            transform: scaleX(0);
+            transform-origin: left;
+            box-shadow: 0 .5rem 1.2rem rgba(0,0,0,.3);
+
+            // transform: scaleX(0) translateX(10rem);
+        }
+    }
+}
+
+.phoneDown {
+    // transform: translate(-45rem, 108.5rem);
+    position: relative;
+    z-index: 0;
+    animation: movePhoneDown .9s ease-out forwards;
+}
+
+.phoneUp {
+    // transform: translate(-45rem, 108.5rem);
+    position: relative;
+    z-index: 0;
+    animation: movePhoneUp .9s ease-out forwards;
+}
+
+.home {
+    &--container {
+        background-color: #62760c;
+        clip-path: polygon(0 0, 70vw 0, 55vw 100%, 0 100%);
+        height: calc(100vh - var(--navbar_height));
+        width: 100vw;
+        color: var(--yellow);
+        padding-left: 8rem;
+        padding-top: 12rem;
+    }
+
+    &--h1 {
+        width: 70rem;
+    }
+
+    &--h2 {
+        width: 88rem;
+        margin-bottom: 10rem;
+    }
+
+    &--phone {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        transform-origin: right;
+        animation: slideIn 2s ease-out;
+        // &-container {
+        //     position: absolute;
+        //     bottom: 0;
+        //     right: 0;
+        // }
+    }
+}
