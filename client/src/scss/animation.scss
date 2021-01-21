@@ -21,6 +21,36 @@
     }
 }
 
+@keyframes popupOut {
+    0% {
+        transform: translate(-50%, -50%) translateY(0);
+    }
+    20% {
+        transform: translate(-50%, -50%) translateY(-5rem);
+    }
+    100% {
+        transform: translate(-50%, -50%) translateY(70rem);
+    }
+}
+
+@keyframes wrapperOut {
+    0% {
+        backdrop-filter: blur(4px);
+    }
+    25% {
+        backdrop-filter: blur(3px);
+    }
+    50% {
+        backdrop-filter: blur(2px);
+    }
+    75% {
+        backdrop-filter: blur(1px);
+    }
+    100% {
+        backdrop-filter: blur(0px);
+    }
+}
+
 @keyframes movePhoneUp {
     from {
         transform: translate(-45rem, 108.5rem);

@@ -1,8 +1,40 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactFullpage from '@fullpage/react-fullpage';
 import Footer from './Footer';
+import Popup from "./Popup";
 
 export default function Home() {
+
+    const [NewPopup, setNewPopup] = useState({        
+        title: "",
+        content: ""
+    });    
+
+    function showPopup(title, content) {
+        var pWrapper = document.getElementById("pWrapper");
+        var popup = document.getElementById("popup");
+        console.log("homelog");
+
+        if (pWrapper) pWrapper.classList.toggle("wrapperAnim");
+        if (popup) popup.classList.toggle("popupAnim");
+
+        setNewPopup({title: title, content: content});
+
+        console.log(title, content);
+
+        // return (
+        //     <Popup show={show} content={content} />
+        // )
+
+    }
+
+    // function doShow() {
+    //     return NewPopup.show ? <Popup header={NewPopup.title} content={NewPopup.content} /> : <i/>;
+    // }
+
+    useEffect(() => {
+        // doShow();
+    }, [NewPopup])
 
     return (
         <ReactFullpage
@@ -156,12 +188,23 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
-                        <div className="active section section--third">                            
-                            <Footer/>
+                        <div className="section section--third"></div>
+                        <div> {/*real footer*/}
+                            <span className="footer--text">
+                                Buy our new <span className="Amatic allcaps">product</span> <span className="allcaps underline">today!</span>
+                            </span>
+                            <Footer
+                                email="Support"
+                                linkedIn="Phone"
+                                twitterHref="https://www.twitter.com"
+                                instaHref="https://www.instagram.com"
+                                emailHref="kiwi@gmail.com"
+                                linkedInHref={""}
+                                showPopup={showPopup} />
+                            
+                            <Popup header={NewPopup.title} content={NewPopup.content} />                            
+
                         </div>
-                        <span className="footer--text">
-                            Buy our new <span className="Amatic allcaps">product</span> <span className="allcaps underline">today!</span>
-                        </span>
                     </ReactFullpage.Wrapper>
                 );
             }}
