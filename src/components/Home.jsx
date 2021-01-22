@@ -63,11 +63,11 @@ export default function Home() {
                     }
                 }
                 if (destination.item.className.includes("section--third") && origin.item.className.includes("section--second")) {
-                    var phone = document.getElementById("movingPhone");
+                    let phone = document.getElementById("movingPhone");
                     phone.classList = "phoneDown";
                 }
                 if (destination.item.className.includes("section--second") && origin.item.className.includes("section--third")) {
-                    var phone = document.getElementById("movingPhone");
+                    let phone = document.getElementById("movingPhone");
                     phone.classList = "phoneUp";
                 }
             }}
