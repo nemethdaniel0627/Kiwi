@@ -43,6 +43,8 @@ export default function Home() {
             //fullpage options
             licenseKey={process.env.REACT_APP_FP_LICENCE_KEY}
             scrollingSpeed={1000}
+            responsiveWidth= {1}
+            responsiveHeight= {1}
             onLeave={function onLeave(origin, destination, direction) {
                 if (destination.item.className.includes("section--second")) {
                     var inVisibles = document.getElementsByClassName("invisible");
@@ -60,15 +62,30 @@ export default function Home() {
                     for (let i = 0; i < inVisibles.length; i++) {
                         inVisibles[i].classList.value = "visible visible--" + visible;
                         visible++
-                    }
+                    }                    
+                    // document.getElementById("fullpage").classList.toggle("fullpage--2");
+                    document.getElementById("fullpage").style.transform = "translate3d(0px,-700px,0px)";
+                    console.log("asd");
                 }
                 if (destination.item.className.includes("section--third") && origin.item.className.includes("section--second")) {
                     let phone = document.getElementById("movingPhone");
-                    phone.classList = "phoneDown";
+                    // phone.classList.toggle("phoneUp");
+                    if (phone.classList.toString().includes("phoneUp")) phone.classList.toggle("phoneUp");
+                    phone.classList.toggle("phoneDown");
+                    // document.getElementById("fullpage").classList.toggle("fullpage--2");
+                    // document.getElementById("fullpage").classList.toggle("fullpage--3");
                 }
                 if (destination.item.className.includes("section--second") && origin.item.className.includes("section--third")) {
                     let phone = document.getElementById("movingPhone");
-                    phone.classList = "phoneUp";
+                    phone.classList.toggle("phoneDown");
+                    phone.classList.toggle("phoneUp");
+                    // document.getElementById("fullpage").classList.toggle("fullpage--3");
+                    // document.getElementById("fullpage").classList.toggle("fullpage--2");
+                    
+                }
+                if (destination.item.className.includes("section--first")) {
+                    // document.getElementById("fullpage").classList.toggle("fullpage--1");
+                    // document.getElementById("fullpage").classList.toggle("fullpage--2");
                 }
             }}
 
@@ -91,7 +108,7 @@ export default function Home() {
                             {/* <div id="two"></div> */}
                             <div className="specs--container">
                                 <div className="specs--phone">
-                                    <img id="movingPhone" src={justphone} alt="Phone" />
+                                    <img id="movingPhone" className="specs--phone--img" src={justphone} alt="Phone" />
                                     <div className="invisible">{/*  finger */}
                                         <div className="specs--point specs--finger--point">
                                             <svg className="specs--finger" width="30" height="29" viewBox="0 0 28 27" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -190,8 +207,8 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
-                        <div className="section section--third"></div>
-                        <div> {/*real footer*/}
+                        <div className="section  section--third"></div>
+                        <div className="real--footer"> {/*real footer*/}
                             <span className="footer--text">
                                 Buy our new <span className="Amatic allcaps">product</span> <span className="allcaps underline">today!</span>
                             </span>

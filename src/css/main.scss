@@ -1,11 +1,10 @@
-
 :root {
   --navbar_height: 6rem;
   --yellow: #cdb30c;
-  --light-yellow: rgba(205, 179, 12, .6);
+  --light-yellow: rgba(205, 179, 12, 0.6);
   --yellow-green: #62760c;
   --brown-green: #535204;
-  --brown: #523906;  
+  --brown: #523906;
 }
 // variables
 
@@ -17,17 +16,19 @@
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
+  @media only screen and (max-width: 1600px) {
+    font-size: 58%;
+  }
 }
 
 body {
-  font-family: 'Play', sans-serif;
+  font-family: "Play", sans-serif;
   background-color: var(--brown-green);
-  // overflow-y: hidden; 
+  // overflow-y: hidden;
   overflow-x: hidden;
-  
 }
 
-h1{
+h1 {
   font-size: 13rem;
 }
 .small-h1 {
@@ -47,7 +48,7 @@ h2 {
 }
 
 .Amatic {
-  font-family: "Amatic SC", cursive;;
+  font-family: "Amatic SC", cursive;
 }
 
 .home-container {

@@ -11,11 +11,11 @@
 
     &--second {
         background-color: var(--brown);
-        // height: calc(100vh - var(--navbar_height)) !important;
+        height: 100vh !important;
     }
 
     &--third {
-        // height: calc(100vh - var(--navbar_height)) !important;
+        height: 100vh !important;
         // position: relative;
         // z-index: 10;
         background-color: var(--brown-green);
@@ -24,8 +24,20 @@
     }
 }
 
+.fullpage--1 {
+    transform: translate3d(0px, 0vh, 0px) !important;
+}
+.fullpage--2 {
+    transform: translate3d(0px, -100vh, 0px) !important;
+}
+.fullpage--3 {
+    transform: translate3d(0px, -200vh, 0px) !important;
+}
+
 #fullpage {
     background-color: var(--yellow-green);
+    display: flex;
+    flex-direction: column;
 }
 
 .invisible {
@@ -41,7 +53,7 @@
         width: 100%;
         height: 100%;
         display: flex;
-        padding: 15rem 2rem;
+        padding: 10rem 2rem;
         justify-content: center;
         align-items: flex-start;
     }
@@ -64,7 +76,7 @@
 
         &--point {
             bottom: 7rem;
-            left: 47%;
+            left: 45%;
             width: 3.2rem;
             height: 3.2rem;
             animation: pointAppear 0.8s 0.5s forwards;
@@ -72,8 +84,8 @@
     }
 
     &--selfie--point {
-        top: 1.1rem;
-        left: 16%;
+        top: 2%;
+        left: 15%;
         width: 1.4rem;
         height: 1.4rem;
         animation: pointAppear 0.8s 1s forwards;
@@ -97,6 +109,13 @@
 
     &--phone {
         position: relative;
+        top: -3rem;
+
+        &--img {
+            width: 25rem !important;
+            // top: -5rem;
+            position: relative;
+        }
     }
 
     &--line {
@@ -109,14 +128,14 @@
 
         &--finger {
             bottom: 8.5rem;
-            right: 53%;
+            right: 55%;
             transform-origin: right;
             animation: lineAppear 1s 0.6s forwards;
         }
 
         &--selfie {
             top: 1.6rem;
-            right: 83.6%;
+            right: 84.6%;
             transform-origin: right;
             animation: lineAppear 1s 1.1s forwards;
         }
@@ -136,8 +155,8 @@
         }
 
         &--charge-2 {
-            bottom: -15.7%;
-            left: 170%;
+            bottom: -16.7%;
+            left: 169%;
             width: 10rem;
             transform-origin: left;
             animation: lineAppear 1s 3.3s forwards;
@@ -147,8 +166,8 @@
     &--block {
         background-color: var(--yellow);
         position: relative;
-        width: 30rem;
-        height: 15rem;
+        width: 25rem;
+        height: 13rem;
         bottom: 1500%;
         display: flex;
         align-items: center;
@@ -156,7 +175,7 @@
         box-shadow: 0 1rem 2rem rgba(0,0,0,.5);
 
         &--font {
-            font-size: 3rem;
+            font-size: 2.5rem;
             text-align: center;
 
             &--bold {
@@ -165,7 +184,7 @@
         }
 
         &--right {
-            right: 100%;
+            right: 83%;
         }
 
         &--left {
@@ -195,28 +214,30 @@
         transform-origin: center;
         animation: scaleArr 1s 1s ease-out forwards;
         position: absolute;
-        top: 46%;
-        left: -44%;
+        top: 45%;
+        left: -43%;
         transform: scale(0) rotate(64deg);
+        width: 46.5rem;
     }
 
     &--arrow {
         position: absolute;
         left: 48%;
-        bottom: -10%;
+        bottom: -11.5%;
 
         &--head {
             transform-origin: top;
             animation: arrowGrowSecond 1s .3s ease-out forwards;
-            transform: scaleY(0);                    
+            transform: scaleY(0);
+            height: 6rem;
         }
 
         &--line {
             position: absolute;
-            bottom: 0;
-            left: 1.1rem;
+            bottom: 0.2rem;
+            left: 1.2rem;
             height: 1rem;
-            width: 5.5rem;
+            width: 5rem;
             animation: arrowGrowFirst 1s 1.3s ease-out forwards;
             transform: scaleX(0);
             transform-origin: left;
@@ -229,14 +250,14 @@
 
 .phoneDown {
     // transform: translate(-45rem, 108.5rem);
-    position: relative;
+    // position: relative;
     z-index: 0;
     animation: movePhoneDown .9s ease-out forwards;
 }
 
 .phoneUp {
     // transform: translate(-45rem, 108.5rem);
-    position: relative;
+    // position: relative;
     z-index: 0;
     animation: movePhoneUp .9s ease-out forwards;
 }
@@ -249,16 +270,18 @@
         width: 100vw;
         color: var(--yellow);
         padding-left: 8rem;
-        padding-top: 12rem;
+        padding-top: 4rem;
     }
 
     &--h1 {
         width: 70rem;
+        font-size: 12rem;
     }
 
     &--h2 {
-        width: 88rem;
+        width: 76rem;
         margin-bottom: 10rem;
+        font-size: 7.5rem;
     }
 
     &--phone {
@@ -267,10 +290,6 @@
         right: 0;
         transform-origin: right;
         animation: slideIn 2s ease-out;
-        // &-container {
-        //     position: absolute;
-        //     bottom: 0;
-        //     right: 0;
-        // }
+        width: 40rem;        
     }
 }

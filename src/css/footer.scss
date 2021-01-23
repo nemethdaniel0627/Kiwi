@@ -7,12 +7,12 @@
     }
 
     &--text {
-        font-size: 10rem;
+        font-size: 9rem;
         color: var(--yellow);
         position: absolute;
         // z-index: 10;
-        bottom: 20%;
-        left: 40%;
+        bottom: 60%;
+        left: 35%;
         width: 60%;
         text-align: center;
     }
@@ -46,11 +46,25 @@
     &--social {
         align-self: stretch;
         font-size: 4rem;
-        padding: 0 30rem;
+        padding: 0 2rem;
         display: flex;
         align-items: center;
         justify-content: space-between;
         text-decoration: none;
+
+        &--container {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-evenly;
+            &--right {
+                padding-right: 5rem;
+            }
+
+            &--left {
+                padding-left: 5rem;
+            }
+        }
         
         &--logos {
 
@@ -73,14 +87,14 @@
             transform: skew(10deg) scale(1.3);
         }
 
-        &--twitter:link,
-        &--twitter:visited {                    
+        // &--twitter:link,
+        // &--twitter:visited {                    
             
-        }
-        &--insta:link,
-        &--insta:visited {                    
+        // }
+        // &--insta:link,
+        // &--insta:visited {                    
             
-        }
+        // }
         &--email {            
             text-transform: uppercase;            
             font-size: 4.5rem;
@@ -100,6 +114,16 @@
             font-size: 5rem;
         }
     }
+}
+
+.real--footer {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 footer {
